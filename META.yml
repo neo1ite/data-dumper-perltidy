@@ -1,0 +1,16 @@
+--- #YAML:1.0
+name:                Data-Dumper-Perltidy
+version:             0.01
+abstract:            Stringify and pretty print Perl data structures.
+license:             perl
+author:              
+    - John McNamara <jmcnamara@cpan.org>
+generated_by:        ExtUtils::MakeMaker version 6.44
+distribution_type:   module
+requires:     
+    Data::Dumper:                  0
+    Perl::Tidy:                    0
+    Test::More:                    0
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
+    version: 1.3
