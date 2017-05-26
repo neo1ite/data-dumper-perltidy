@@ -18,7 +18,7 @@ use Data::Dumper ();
 use Perl::Tidy;
 use vars qw($VERSION @EXPORT @ISA);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 our @EXPORT  = ('Dumper');
 @ISA = qw(Exporter);
 
@@ -32,6 +32,16 @@ sub Dumper {
 
     my $tidied;
     my $dumper = Data::Dumper::Dumper(@_);
+
+    perltidy( argv => '-vtc=1 -vt=1 -sbvt=0 -sbvtc=0', source => \$dumper, destination => \$tidied );
+
+    return $tidied;
+}
+
+sub Dump {
+
+    my $tidied;
+    my $dumper = Data::Dumper->Dump(@_[1 .. $#_]);
 
     perltidy( source => \$dumper, destination => \$tidied );
 
